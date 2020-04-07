@@ -22,3 +22,55 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+# LiveApp DB設計
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+### Association
+- has_many :favorites
+- has_many :videoes, through: :favorites
+
+## videoesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|video|text|null: false|
+|artist|text||
+|song-title|text||
+|content|text||
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- has_many :favorites
+- has_many :users, through: :favorites
+- has_many :videoes_tags
+- has_many :tags, through: :videoes_tags
+
+## tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+### Association
+- has_many :videoes_tags
+- has_many :videoes, through: :videoes_tags
+
+## videoes_tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|video_id|integer|null: false, foreign_key: true|
+|tag_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :video
+- belongs_to :tag
+
+## favoritesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|video_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :video
