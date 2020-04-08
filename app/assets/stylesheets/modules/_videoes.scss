@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: rgba(225, 232, 235, 0.534);
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__left-content {
+    a {
+      text-decoration: none;
+      padding-left: 20px;
+    }
+  }
+  &__right-content {
+    a {
+    text-decoration: none;
+    color: black;
+    padding-right: 10px;
+    }
+  }
+}
+
+.contents {
+  width: 100vw;
+  &__fv-section {
+    height: 400px;
+    background-image: url(background-image.jpeg);
+    background-size: cover;
+    background-position: center;
+    &__header {
+
+    }
+  }
+  &__main {
+    &__video-list {
+  
+    }
+  }
+}
