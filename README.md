@@ -33,9 +33,9 @@ Things you may want to cover:
 |password|string|null: false|
 ### Association
 - has_many :favorites
-- has_many :videoes, through: :favorites
+- has_many :videos, through: :favorites
 
-## videoesテーブル
+## videosテーブル
 |Column|Type|Options|
 |------|----|-------|
 |video|text|null: false|
@@ -46,18 +46,18 @@ Things you may want to cover:
 ### Association
 - has_many :favorites
 - has_many :users, through: :favorites
-- has_many :videoes_tags
-- has_many :tags, through: :videoes_tags
+- has_many :videos_tags
+- has_many :tags, through: :videos_tags
 
 ## tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
 ### Association
-- has_many :videoes_tags
-- has_many :videoes, through: :videoes_tags
+- has_many :videos_tags
+- has_many :videos, through: :videos_tags
 
-## videoes_tagsテーブル
+## videos_tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |video_id|integer|null: false, foreign_key: true|
