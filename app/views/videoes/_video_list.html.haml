@@ -1,5 +1,49 @@
 .contents
   .contents__fv-section
-    .contents__fv-section__header
+    .contents__fv-section__bottom
+      %form.contents__fv-section__bottom__artist
+        %input.contents__fv-section__bottom__artist__input{type: 'text', placeholder: 'アーティスト名'}
+        %input.contents__fv-section__bottom__artist__btn{type: 'submit',name: 'submit', value: '検索'}
+      %form.contents__fv-section__bottom__song-title
+        %input.contents__fv-section__bottom__song-title__input{type: 'text_field', placeholder: '曲名'}
+        %input.contents__fv-section__bottom__song-title__btn{type: 'submit',name: 'submit', value: '検索'}
   .contents__main
-    .contents__main__video-list
+    %p ALL CONTENTS
+    .contents__main__videoes-list
+      .contents__main__videoes-list__group
+        .contents__main__videoes-list__group__video
+          %img{src: "/Users/asuka/projects/live-app/app/assets/images/background-image3.jpeg"}
+        .contents__main__videoes-list__group__text
+          .contents__main__videoes-list__group__text__song-title
+            midnight cruising
+          .contents__main__videoes-list__group__text__artist
+            04 limited sazabys
+          .contents__main__videoes-list__group__text__created-at
+            2020/04/08
+          .contents__main__videoes-list__group__text__user-name
+            okapy
+      .contents__main__videoes-list__group
+        .contents__main__videoes-list__group__video
+          %img{src: "img/background-image3.jpeg"}
+        .contents__main__videoes-list__group__text
+          .contents__main__videoes-list__group__text__song-title
+            monolith
+          .contents__main__videoes-list__group__text__artist
+            04 limited sazabys
+          .contents__main__videoes-list__group__text__created-at
+            2020/04/07
+          .contents__main__videoes-list__group__text__user-name
+            okapy
+      .contents__main__videoes-list__group
+        .contents__main__videoes-list__group__video
+          %img{src: "background-image3.jpeg"}
+        .contents__main__videoes-list__group__text
+          .contents__main__videoes-list__group__text__song-title
+            fiction
+          .contents__main__videoes-list__group__text__artist
+            04 limited sazabys
+          .contents__main__videoes-list__group__text__created-at
+            2020/04/07
+          .contents__main__videoes-list__group__text__user-name
+            okapy
+.footer
