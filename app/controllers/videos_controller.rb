@@ -15,7 +15,7 @@ class VideosController < ApplicationController
   end
 
   def create
-    Video.create(video_params)
+    Video.create(video_params).merge(name: current_user.name)
     redirect_to root_path
   end
 

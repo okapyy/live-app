@@ -1,0 +1,60 @@
+.user-show {
+  &__box {
+    
+  }
+  &__main {
+    height: 720px;
+    width: 900px;
+    margin: 0 auto;
+    padding: 15px 0 0 60px;
+    p {
+      text-align: center;
+      font-size: 20px;
+    }
+    &__videoes-list {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      &__group {
+        display: block;
+        display: flex;
+        width: 50%;
+        padding-bottom: 25px;
+        &__label {
+          display: flex;
+          cursor: pointer;
+          &__video {
+            img {
+              width: 200px;
+              height: 150px;
+            }
+          }
+          &__text {
+            height: 150px;
+            padding-left: 10px;
+            &__song-title {
+              margin-top: 30px;
+            }
+            &__artist {
+              margin-bottom: 20px;
+              font-size: 14px;
+            }
+            &__created-at {
+              font-size: 10px;
+            }
+            &__user-name {
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+    &__paginate {
+      text-align: center;
+    }
+  }
+}

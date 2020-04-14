@@ -1,0 +1,23 @@
+.user-show
+  = render "videos/header"
+  .user-show__box
+    = @name
+  .user-show__main
+    %p 投稿動画
+    .user-show__main__videoes-list
+      - @videos.each do |video|
+        = link_to video_path(video.id), class: "user-show__main__videoes-list__group" do
+          %label{class: "user-show__main__videoes-list__group__label"}
+            .user-show__main__videoes-list__group__label__video
+              = image_tag video.video_url(:screenshot).to_s
+            .user-show__main__videoes-list__group__label__text
+              .user-show__main__videoes-list__group__label__text__song-title
+                = video.song_title
+              .user-show__main__videoes-list__group__label__text__artist
+                = video.artist
+              .user-show__main__videoes-list__group__label__text__created-at
+                = video.created_at.strftime("%Y年%m月%d日  %H時%M分")
+              .user-show__main__videoes-list__group__label__text__user-name
+                = video.users.name
+    .user-show__main__paginate
+      = paginate(@videos)
