@@ -10,22 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_09_061937) do
-
-  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "video_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_favorites_on_user_id"
-    t.index ["video_id"], name: "index_favorites_on_video_id"
-  end
-
-  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "text", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2020_04_14_060941) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -41,15 +26,6 @@ ActiveRecord::Schema.define(version: 2020_04_09_061937) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "video_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "video_id", null: false
-    t.bigint "tag_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["tag_id"], name: "index_video_tags_on_tag_id"
-    t.index ["video_id"], name: "index_video_tags_on_video_id"
-  end
-
   create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "video", null: false
     t.text "artist"
@@ -61,9 +37,5 @@ ActiveRecord::Schema.define(version: 2020_04_09_061937) do
     t.index ["user_id"], name: "index_videos_on_user_id"
   end
 
-  add_foreign_key "favorites", "users"
-  add_foreign_key "favorites", "videos"
-  add_foreign_key "video_tags", "tags"
-  add_foreign_key "video_tags", "videos"
   add_foreign_key "videos", "users"
 end
