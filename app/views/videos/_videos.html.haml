@@ -1,0 +1,16 @@
+.contents__main__videoes-list
+  - videos.each do |video|
+    = link_to video_path(video.id), class: "contents__main__videoes-list__group" do
+      %label{class: "contents__main__videoes-list__group__label"}
+        .contents__main__videoes-list__group__label__video
+          = image_tag video.video_url(:screenshot).to_s
+        .contents__main__videoes-list__group__label__text
+          .contents__main__videoes-list__group__label__text__song-title
+            = video.song_title
+          .contents__main__videoes-list__group__label__text__artist
+            = video.artist
+          .contents__main__videoes-list__group__label__text__created-at
+            = video.created_at.strftime("%Y年%m月%d日  %H時%M分")
+          .contents__main__videoes-list__group__label__text__user-name
+            = video.users.name
+ 

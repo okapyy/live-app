@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+  def show
+    user = User.find(params[:id])
+    @name = user.name
+    @videos= user.videos.page(params[:page]).order("created_at DESC").per(6)
+  end
+
   def edit
   end
 

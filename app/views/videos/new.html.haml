@@ -1,0 +1,16 @@
+.new-body
+  = render "header"
+  .new-body__background
+  .new-body__contents
+    %h1 Create Video
+    = form_for [@video], html:{ class: 'new-body__contents__form'} do |f|
+      %p 動画URL
+      = f.label :video, class: 'new-body__contents__form__input' do
+        = f.file_field :video, class: 'new-body__contents__form__input--file'
+      %p アーティスト名
+      = f.text_field :artist, class: 'new-body__contents__form__input'
+      %p 曲名
+      = f.text_field :song_title, class: 'new-body__contents__form__input'
+      %p コメント
+      = f.text_area :content, rows: '10', cols: '20', class: 'new-body__contents__form__input--content'
+      = f.submit 'Creating !', class: 'new-body__contents__form__btn'

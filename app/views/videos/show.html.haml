@@ -1,0 +1,24 @@
+.show-body
+  = render "header"
+  .show-body__contents
+    .show-body__contents__box
+      .show-body__contents__box__video
+        = video_tag @video.video.to_s, loop: true, controls: true, playsinline: 'true', size: '200*100'
+      .show-body__contents__box__details
+        .show-body__contents__box__details__song-title
+          = @video.song_title
+        .show-body__contents__box__details__artist
+          = @video.artist
+        .show-body__contents__box__details__created-at
+          = @video.created_at.strftime("%Y年%m月%d日  %H時%M分")
+        .show-body__contents__box__details__content
+          = @video.content
+      - if user_signed_in? && current_user.id == @video.user_id
+        .show-body__contents__box__bottom
+          .show-body__contents__box__btn__bottom__btn
+            = link_to edit_video_path(@video.id), class: 'show-body__contents__box__bottom__btn__edit' do
+              Edit
+          \/
+          .show-body__contents__box__btn__bottom__btn
+            = link_to video_path(@video.id), method: :delete, class: 'show-body__contents__box__bottom__btn__delete' do
+              Delete
